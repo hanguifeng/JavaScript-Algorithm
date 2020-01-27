@@ -19,9 +19,6 @@ let rotate = function(nums, k) {
     return;
   }
   let tmp = 0;
-  myReverse(0, n - 1);
-  myReverse(0, k - 1);
-  myReverse(k, n - 1);
   const myReverse = (start, end) => {
     while (start < end) {
       tmp = nums[start];
@@ -31,4 +28,7 @@ let rotate = function(nums, k) {
       end--;
     }
   };
+  myReverse(0, n - 1);
+  myReverse(0, k - 1);
+  myReverse(k, n - 1);
 };
