@@ -41,38 +41,38 @@ class LazyManClass {
   }
 
   eat = name => {
-    const fn = (name => () => {
+    const fn = () => {
       console.log(`I am eating ${name}`);
       this.next();
-    })(name);
+    };
     this.taskList.push(fn);
     return this;
   };
 
   sleep = time => {
-    const fn = (time => () => {
+    const fn = () => {
       setTimeout(() => {
         console.log(`等待了${time}秒...`);
         this.next();
       }, time * 1000);
-    })(time);
+    };
     this.taskList.push(fn);
     return this;
   };
 
   sleepFirst = time => {
-    const fn = (time => () => {
+    const fn = () => {
       setTimeout(() => {
         console.log(`等待了${time}秒...`);
         this.next();
       }, time * 1000);
-    })(time);
+    };
     this.taskList.unshift(fn);
     return this;
   };
 
   next = () => {
-    var fn = this.taskList.shift();
+    const fn = this.taskList.shift();
     fn && fn();
   };
 }
