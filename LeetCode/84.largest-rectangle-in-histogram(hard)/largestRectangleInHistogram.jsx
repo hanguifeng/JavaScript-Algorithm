@@ -12,10 +12,10 @@ let largestRectangleArea = function(heights) {
 };
 
 // 利用栈
-var largestRectangleArea = function(heights) {
-  var maxarea = 0;
-  var stack = [-1];
-  for (var i = 0; i < heights.length; i++) {
+let largestRectangleArea = function(heights) {
+  let maxarea = 0;
+  let stack = [-1];
+  for (let i = 0; i < heights.length; i++) {
     while (stack.length > 1 && heights[stack[stack.length - 1]] >= heights[i]) {
       maxarea = Math.max(
         maxarea,
